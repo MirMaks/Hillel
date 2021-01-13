@@ -1,1 +1,1 @@
-#https://github.com/MirMaks/Hillel/blob/main/hw8/Index.html
+#https://mirmaks.github.io/Hillel/hw8/index.html
