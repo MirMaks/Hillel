@@ -1,9 +1,9 @@
-document.querySelector('.button-js').onclick = onAddButtonClick;
-let valuesFromInput = document.querySelector('.input-js');
+document.querySelector('.button-js').addEventListener('click', onAddButtonClick);
+const valuesFromInput = document.querySelector('.input-js');
 function onAddButtonClick() {
-    document.querySelector('.text-output-js').innerHTML += ' ' + valuesFromInput.value;
-    function clearInput() {
+    if (valuesFromInput.value !== '') {
+        document.querySelector('.empty-js').hidden = true;
+        document.querySelector('.text-output-ul-js').innerHTML += `<li>${valuesFromInput.value}</li>`;
         valuesFromInput.value = '';
     }
-    clearInput();
 }
