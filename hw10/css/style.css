@@ -1,0 +1,8 @@
+body.body-color{background-color: rgb(225, 247, 239);}
+div.content{margin: 20px;}
+.input-js{height: 35px;}
+.button-js{height: 35px; margin-bottom: 5px; background-color: rgb(158, 192, 243);}
+div.text-output-js{margin-top: 20px ; min-width:250px; max-width: max-content; word-wrap: break-word;}
+li.list-item-js{background-color: rgb(239, 248, 117); margin: 10px; max-width: max-content; }
+.button-del-js{margin-left: 50px;}
+li.green{background: rgb(128, 255, 0);}
