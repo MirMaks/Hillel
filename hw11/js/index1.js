@@ -1,33 +1,32 @@
-function createCalculator(a) {
-
+function createCalculator(initialNumbers) {
+    let calculationResult = initialNumbers;
     return {
-        sum(b) {
-            return a + b;
+        sum: function (number) {
+            calculationResult += number;
+            console.log(`${initialNumbers} + ${number} = ${calculationResult}`);
         },
-        mult(b) {
-            return this.sum(5) * b;
+        mult: function (number) {
+            calculationResult *= number;
+            console.log(`* ${number} = ${calculationResult}`);
         },
-        sub(b) {
-            return this.mult(10) - b;
+        sub: function (number) {
+            calculationResult -= number;
+            console.log(`- ${number} = ${calculationResult}`);
         },
-        div(b) {
-            return this.sub(40) / b;
+        div: function (number) {
+            calculationResult /= number;
+            console.log(`/ ${number} = ${calculationResult}`);
         },
-        set() {
-            return (this.div(10) / this.div(10)) * 100;
-        }
+        set: function (number) {
+            calculationResult = number;
+            console.log(`set = ${calculationResult}`);
+        },
     }
+
 }
 const calc = createCalculator(10);
-
-
 calc.sum(5);
-console.log(`sum = ${calc.sum(5)}`);
 calc.mult(10);
-console.log(`multiplication = ${calc.mult(10)}`);
 calc.sub(40);
-console.log(`subtraction =  ${calc.sub(40)}`);
 calc.div(10);
-console.log(`division = ${calc.div(10)}`);
 calc.set(100);
-console.log(`set = ${calc.set(100)}`);
