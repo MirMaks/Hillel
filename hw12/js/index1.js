@@ -21,18 +21,23 @@ function Hamburger(size, price, callories) {
         if (topping === TOPPING_MAYO) {
             this.price += 20;
             this.callories += 5;
+console.log(topping);
         } else if (topping === TOPPING_POTATO) {
             this.price += 15;
             this.callories += 10;
+console.log(topping);
         } else if (topping === TOPPING_SALAD) {
             this.price += 20;
             this.callories += 5;
+console.log(topping);
         } else if (topping === TOPPING_SPICE) {
             this.price += 15;
             this.callories += 0;
+console.log(topping);
         } else if (topping === TOPPING_CHEESE) {
             this.price += 10;
             this.callories += 20;
+console.log(topping);
         }
     }
 
