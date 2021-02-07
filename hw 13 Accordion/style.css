@@ -1,0 +1,22 @@
+.title{
+    margin: 10px 10px 0px 10px;
+    background-color: rgb(106, 207, 211); 
+    width: 400px;
+    padding:5px 30px 5px 30px;
+    border: 1px solid rgb(206, 248, 242);
+    
+    }
+.title:hover{
+    background-color: rgb(203, 245, 248);
+    border: 3px solid rgb(206, 248, 242);
+    }
+    
+.body{
+    margin-left:  10px;
+    width: 400px;
+    border: 2px  solid rgb(206, 248, 242);
+    
+    }
+.tab{
+    display: none;
+}
