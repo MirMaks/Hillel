@@ -13,10 +13,7 @@ function Todo() {
             const jsonTodos = xhr.response;
             const todos = JSON.parse(jsonTodos);
             console.log(todos.length);
-            // for (let i = 0; i < todos.length; i++) {
-            //     let element = todos[i];
-            //     console.log('WWW', element);
-            // }
+            
             todos.map((todo) => {
                 console.log(todo);
             });
