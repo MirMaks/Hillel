@@ -20,7 +20,7 @@ function getTodos() {
             const id = 'todo id: ' + todo.id;
             const title = 'title: ' + todo.title;
             const completed = 'completed: ' + todo.completed;
-            const li = (`<li class="li-todo ${completed}">${id + ',  ' + title + ',  ' + completed + '.'} </li >`);
+            const li = (`<li class="li-todo ${todo.completed}">${id + ',  ' + title + ',  ' + completed + '.'} </li >`);
             document.querySelector('.ul-todo').innerHTML += li;
         });
     }
