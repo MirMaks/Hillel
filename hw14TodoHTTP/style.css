@@ -1,0 +1,8 @@
+li{margin:5px;
+max-width: max-content;}
+.true{
+    background-color: chartreuse;
+}
+.false{
+    background-color: rgb(245, 144, 105);
+}

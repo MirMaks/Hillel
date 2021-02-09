@@ -1,37 +1,26 @@
 // С помощью GET запроса получаем список
 // https://jsonplaceholder.typicode.com/todos
 // Ответ рендерим как список тудушек, с учетом тайтла и состояния(сделано / не сделано)
-function Todo() {
-    this.getTodos = function () {
-        const xhr = new XMLHttpRequest();
 
-        xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos');
+function getTodos() {
+    const xhr = new XMLHttpRequest();
 
-        xhr.send();
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos');
 
-        xhr.onload = function () {
-            const jsonTodos = xhr.response;
-            const todos = JSON.parse(jsonTodos);
-            console.log(todos.length);
-            // for (let i = 0; i < todos.length; i++) {
-            //     let element = todos[i];
-            //     console.log('WWW', element);
-            // }
-            todos.map((todo) => {
-                console.log(todo);
-            });
+    xhr.send();
 
-
-        }
-    }
-    this.createTodoList = function () {
-        const ulTodo = document.querySelector('.container').innerHTML = ('<ul class="ul-todo"></ul>');
-
-
-
+    xhr.onload = function () {
+        const jsonTodos = xhr.response;
+        const todos = JSON.parse(jsonTodos);
+        const todoElemets = todos.map((todo) => {
+            return todo;
+        });
+        document.querySelector('.container').innerHTML = (`<ul class="ul-todo"><h1>Todos</h1></ul>`);
+        todoElemets.forEach(todo => {
+            document.querySelector('.ul-todo').innerHTML += (`<li class="li-todo ${todo.completed}">${'userId: ' + todo.userId + ', ' + 'id: ' + todo.id + ', ' + 'title: ' + todo.title + ', ' + 'completed: ' + todo.completed + '.'} </li > `);
+        });
     }
 }
 
-const todoList = new Todo();
-todoList.getTodos();
-todoList.createTodoList();
+getTodos();
+
