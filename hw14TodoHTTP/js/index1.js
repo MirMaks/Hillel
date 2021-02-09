@@ -17,7 +17,11 @@ function getTodos() {
         });
         document.querySelector('.container').innerHTML = (`<ul class="ul-todo"><h1>Todos</h1></ul>`);
         todoElemets.forEach(todo => {
-            document.querySelector('.ul-todo').innerHTML += (`<li class="li-todo ${todo.completed}">${'todo id: ' + todo.id + ',  ' + 'title: ' + todo.title + ',  ' + 'completed: ' + todo.completed + '.'} </li > `);
+            const id = 'todo id: ' + todo.id;
+            const title = 'title: ' + todo.title;
+            const completed = 'completed: ' + todo.completed;
+            const li = (`<li class="li-todo ${completed}">${id + ',  ' + title + ',  ' + completed + '.'} </li >`);
+            document.querySelector('.ul-todo').innerHTML += li;
         });
     }
 }
