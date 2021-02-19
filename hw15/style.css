@@ -1,0 +1,12 @@
+div.col-4{background-color: rgb(197, 241, 255);
+    border:2px solid brown;
+width: 500px;
+height: 500px;
+margin: 50px;}
+
+div.col-6{background-color: rgb(201, 253, 199);
+    border:2px solid brown;
+width: 500px;
+height: 500px;
+margin: 50px;}
+
