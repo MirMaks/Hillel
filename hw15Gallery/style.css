@@ -1,0 +1,26 @@
+h1{text-align: center;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 100px;}
+div.col-4{background-color: rgb(197, 241, 255);
+    border:1px solid rgb(61, 42, 165);
+width: 500px;
+height: 100%;
+margin: 50px;}
+
+div.col-6{
+width: 500px;
+height: 100%;
+margin: 50px;}
+
+li{margin-top: 10px;
+    
+}
+li:hover{background-color: rgb(171, 213, 233);
+cursor: pointer;}
+
+ul{list-style-type: none;
+}
+.row{margin-left: 70px;}
+img{margin-top: 2px;
+border: 1px solid black;
+}
