@@ -24,44 +24,39 @@
 class Accordion {
     constructor(list) {
         this.list = list;
-        this.curreTabId = null;
         this.init();
         this.createEventListener();
 
     }
     init() {
-        // Добавить класс id каждому элементу
-        // Cкрыть body
-        const tabs = this.list.querySelectorAll('.body');
-        const titleClass = this.list.querySelectorAll('.title');
-        for (let i = 0; i < tabs.length; i++) {
-            tabs[i].className += 'item-' + i;
-        }
-        for (let i = 0; i < titleClass.length; i++) {
-            titleClass[i].className += ' header-' + i;
-        }
-        for (let i = 0; i < tabs.length; i++) {
-            tabs[i].classList.add('tab');
-        }
-        this.curreTabId = 0;
-        this.tabs = tabs;
+        const bodys = this.list.querySelectorAll('.body');
+        const titles = this.list.querySelectorAll('.title');
 
+        for (let i = 0; i < this.list.children.length; i++) {
+            this.list.children[i].className += ('accordion-section');
+        }
+
+        const accordionSection = document.querySelectorAll('.accordion-section');
+
+        for (let i = 0; i < bodys.length; i++) {
+            bodys[i].classList = ('accordion-body');
+        }
+
+        for (let i = 0; i < titles.length; i++) {
+            titles[i].classList = ('accordion-title');
+        }
+        this.accordionSection = accordionSection;
     }
+
     createEventListener() {
-        this.list.addEventListener("click", (event) => {
-            if (event.target.closest('.header-0')) {
-                this.list.querySelector('.item-0').classList.toggle('tab');
-                this.list.querySelector('.item-1').classList.add('tab');
-                this.list.querySelector('.item-2').classList.add('tab');
-            } else if (event.target.closest('.header-1')) {
-                this.list.querySelector('.item-1').classList.toggle('tab');
-                this.list.querySelector('.item-0').classList.add('tab');
-                this.list.querySelector('.item-2').classList.add('tab');
-            } else if (event.target.closest('.header-2')) {
-                this.list.querySelector('.item-2').classList.toggle('tab');
-                this.list.querySelector('.item-0').classList.add('tab');
-                this.list.querySelector('.item-1').classList.add('tab');
-            }
-        });
+        this.accordionSection.forEach((section) => {
+            section.addEventListener('click', (event) => {
+                document.querySelectorAll('.accordion-section').forEach(function (section) {
+                    section.classList.remove('active');
+                })
+                event.target.closest('.accordion-section').classList.add('active');
+            })
+        })
     }
 }
+
