@@ -46,17 +46,23 @@ class Accordion {
             titles[i].classList = ('accordion-title');
         }
         this.accordionSection = accordionSection;
+        this.titles = titles;
     }
 
     createEventListener() {
-        this.accordionSection.forEach((section) => {
-            section.addEventListener('click', (event) => {
-                document.querySelectorAll('.accordion-section').forEach(function (section) {
-                    section.classList.remove('active');
-                })
-                event.target.closest('.accordion-section').classList.add('active');
+        this.titles.forEach((item) => {
+            item.addEventListener('click', () => {
+                const parent = item.parentNode;
+                if (parent.classList.contains('active')) {
+                    parent.classList.remove('active');
+                } else {
+                    this.accordionSection.forEach((child) => child.classList.remove('active'))
+                    parent.classList.add('active');
+                }
+
             })
         })
+
     }
 }
 
