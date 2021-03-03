@@ -8,7 +8,7 @@
 const albumDiv = document.querySelector('.album-js');
 const gallery = document.querySelector('.gallery-js');
 const albumUl = document.querySelector('.ul-album-js');
-const albumLi = document.querySelectorAll('.li-album-js');
+
 
 function sendAlbumRequest() {
 
