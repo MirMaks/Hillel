@@ -8,7 +8,7 @@
 const albumDiv = document.querySelector('.album-js');
 const gallery = document.querySelector('.gallery-js');
 const albumUl = document.querySelector('.ul-album-js');
-
+const albumLi = document.querySelectorAll('.li-album-js');
 
 function sendAlbumRequest() {
 
@@ -22,6 +22,7 @@ function renderAlbums(responseAlbum) {
             albumUl.innerHTML += (`<li class="li-album-js"  id=${response[key].id}>${response[key].id}. ${response[key].title} </li >`);
         }
     });
+
 }
 
 function addAlbumClickEventListener() {
@@ -47,6 +48,7 @@ function getPhotos(albumId) {
         })
 };
 
+
 function renderPhoto(item) {
 
     const photo = document.createElement('img');
@@ -61,11 +63,19 @@ function clearGallery() {
     gallery.innerHTML = '';
 }
 
+function GetTheFirstAlbum(responseAlbum) {
+    responseAlbum.then((response) => {
+        const firstAlbum = response[0].id;
+        getPhotos(firstAlbum);
+    });
+}
+
 function init() {
 
     addAlbumClickEventListener();
     const responseAlbum = sendAlbumRequest();
     renderAlbums(responseAlbum);
-    getPhotos(1);
+    GetTheFirstAlbum(responseAlbum);
 }
+
 init();
