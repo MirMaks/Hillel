@@ -10,17 +10,17 @@ const gallery = document.querySelector('.gallery-js');
 const albumUl = document.querySelector('.ul-album-js');
 
 
-function sendAlbumRequest() {
+function getAlbumRequest() {
 
     return fetch('https://jsonplaceholder.typicode.com/albums').then((response) => response.json());
 }
 
-function renderAlbums(responseAlbum) {
+function renderAlbums(albums) {
 
-    responseAlbum.then((response) => {
+    albums.then((album) => {
 
-        for (key in response) {
-            albumUl.innerHTML += (`<li class="li-album-js"  id=${response[key].id}>${response[key].id}. ${response[key].title} </li >`);
+        for (key in album) {
+            albumUl.innerHTML += (`<li class="li-album-js"  id=${album[key].id}>${album[key].id}. ${album[key].title} </li >`);
         }
     });
 
@@ -44,30 +44,30 @@ function getPhotos(albumId) {
         .then((response) => response.json())
         .then((response) => {
             clearGallery();
-            response.map(item => {
-                renderPhoto(item);
+            response.map(photo => {
+                renderPhoto(photo);
             })
 
         })
 };
 
 
-function renderPhoto(item) {
+function renderPhoto(photo) {
 
-    const photo = document.createElement('img');
-    photo.src = item.url;
-    photo.id = item.id;
-    photo.width = 300;
-    photo.height = 74;
-    gallery.append(photo);
+    const img = document.createElement('img');
+    img.src = photo.url;
+    img.id = photo.id;
+    img.width = 300;
+    img.height = 74;
+    gallery.append(img);
 }
 
 function clearGallery() {
     gallery.innerHTML = '';
 }
 
-function GetTheFirstAlbum(responseAlbum) {
-    responseAlbum.then((response) => {
+function GetTheFirstAlbum(albums) {
+    albums.then((response) => {
         const firstAlbum = response[0].id;
         getPhotos(firstAlbum);
     });
@@ -76,9 +76,9 @@ function GetTheFirstAlbum(responseAlbum) {
 function init() {
 
     addAlbumClickEventListener();
-    const responseAlbum = sendAlbumRequest();
-    renderAlbums(responseAlbum);
-    GetTheFirstAlbum(responseAlbum);
+    const albums = getAlbumRequest();
+    renderAlbums(albums);
+    GetTheFirstAlbum(albums);
 }
 
 init();
