@@ -1,23 +1,23 @@
-function createCalculator(initialNumbers) {
-    let calculationResult = initialNumbers;
+function createCalculator(currentNumber) {
+    let calculationResult = currentNumber;
     return {
-        sum: function (number) {
+        sum: (number) => {
             calculationResult += number;
-            console.log(`${initialNumbers} + ${number} = ${calculationResult}`);
+            console.log(`${currentNumber} + ${number} = ${calculationResult}`);
         },
-        mult: function (number) {
+        mult: (number) => {
             calculationResult *= number;
             console.log(`* ${number} = ${calculationResult}`);
         },
-        sub: function (number) {
+        sub: (number) => {
             calculationResult -= number;
             console.log(`- ${number} = ${calculationResult}`);
         },
-        div: function (number) {
+        div: (number) => {
             calculationResult /= number;
             console.log(`/ ${number} = ${calculationResult}`);
         },
-        set: function (number) {
+        set: (number) => {
             calculationResult = number;
             console.log(`set = ${calculationResult}`);
         },
