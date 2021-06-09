@@ -1,4 +1,5 @@
 Написать функцию createCalculator, чтобы ее можно было использовать таким образом
+
 const calc = createCalculator(10);
 
 calc.sum(5); /// 15
